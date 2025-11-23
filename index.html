@@ -1,93 +1,64 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Иулиана — портфолио</title>
-  <style>
-    body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#111}
-    header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.9);padding:10px;border-bottom:1px solid #eee}
-    .wrap{max-width:900px;margin:0 auto;padding:80px 16px 40px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:bold}
-    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:12px}
-    nav a{text-decoration:none;color:#555}
-    h1{font-size:24px;margin:0 0 8px}
-    p{color:#666}
-    .hero{display:flex;gap:16px;flex-wrap:wrap}
-    .photo{width:300px;border-radius:8px}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:6px}
-    form{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-    input,textarea{padding:8px;border:1px solid #ddd;border-radius:6px}
-    button{background:#ff6b6b;color:white;border:0;padding:8px;border-radius:6px}
-    footer{margin-top:24px;padding:12px 0;color:#777;border-top:1px solid #eee}
-    @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}.photo{width:100%}}
-    html{scroll-behavior:smooth}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <div class="brand">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 20c0-2.2 3.6-6 6-6 1 0 1.4.4 2 1s1 .8 2 1c2 0 6-4 6-6 0-1.7-2.5-4-4-4-1.7 0-4 2-4 4 0 1.3-.8 2-1.5 2.5C10.2 9.5 9 9 8 9 5 9 2 12 2 15v5z" fill="#ff6b6b"/></svg>
-        Иулиана
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Главная</a></li>
-          <li><a href="#about">Обо мне</a></li>
-          <li><a href="#portfolio">Портфолио</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header><div class="wrap">
-  <section id="home" class="hero">
-    <div style="flex:1;min-width:220px">
-      <h1>Привет, я Иулиана</h1>
-      <p>Мне 18 лет. Люблю лепить мини-фигурки из глины и рисовать концепты. Учусь на ИТ в медиаиндустрии. На этом сайте мои персонажи из игр и аниме.</p>
-    </div>
-    <img src="assets/original.jpg" alt="фигурка" class="photo">
-  </section>  <section id="about">
+  <!-- Навигация -->
+  <nav>
+    <ul>
+      <li><a href="#home">Главная</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#portfolio">Портфолио</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <!-- Главная -->
+  <section id="home">
+    <h1>Искусство и творчество</h1>
+    <p>Рисование, лепка из глины, концепты</p>
+    <a href="#portfolio" class="btn">Смотреть работы</a>
+  </section>
+
+  <!-- Обо мне -->
+  <section id="about">
     <h2>Обо мне</h2>
-    <p>Смешанная техника, минимализм и японская эстетика. Работаю с глиной, раскрашиваю по номерам и делаю концепт-арт.</p>
-  </section>  <section id="portfolio">
+    <p>Мне 18 лет, я учусь на направлении «Информационные технологии в медиаиндустрии». Моё вдохновение — искусство и творчество: рисование, лепка из глины, создание фигурок персонажей из игр и аниме. Я люблю фантазировать и воплощать идеи в реальность, смешивая техники и добавляя японскую эстетику. В моём портфолио вы найдёте концепт‑арты, фигурки и проекты, созданные с душой.</p>
+  </section>
+
+  <!-- Портфолио -->
+  <section id="portfolio">
     <h2>Портфолио</h2>
     <div class="gallery">
-      <img src="assets/gallery1.jpg" alt="работа1">
-      <img src="assets/gallery2.jpg" alt="работа2">
-      <img src="assets/gallery3.jpg" alt="работа3">
-      <img src="assets/gallery4.jpg" alt="работа4">
+      <img src="original.jpg" alt="Фигурка из глины">
+      <img src="gallery1.jpg" alt="Работа 1">
+      <img src="gallery2.jpg" alt="Работа 2">
+      <img src="gallery3.jpg" alt="Работа 3">
     </div>
-  </section>  <section id="contacts">
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts">
     <h2>Контакты</h2>
-    <form id="f" onsubmit="return s();">
-      <input type="text" id="n" placeholder="Имя" required>
-      <input type="email" id="e" placeholder="Email" required>
-      <textarea id="m" rows="4" placeholder="Сообщение" required></textarea>
+    <form>
+      <input type="text" name="name" placeholder="Имя" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Сообщение"></textarea>
       <button type="submit">Отправить</button>
-      <div id="msg" style="color:#777;font-size:13px"></div>
     </form>
-    <p>Телефон: <a href="tel:+79006343144">+7 900 634-31-44</a><br>Email: <a href="mailto:iuliana28052007@gmail.com">iuliana28052007@gmail.com</a></p>
-    <p>Telegram: <a href="https://t.me/Ventilyator28">@Ventilyator28</a> · VK: <a href="https://vk.com/id551824005">vk</a></p>
-    <img src="assets/qr-placeholder.png" alt="qr" style="max-width:120px;margin-top:8px">
-  </section>  <footer>
-    © Иулиана 2025
+    <p>Email: <a href="mailto:iuliana28052007@gmail.com">iuliana28052007@gmail.com</a></p>
+    <p>Телефон: <a href="tel:+79006343144">+7 900 634 31 44</a></p>
+    <p>Telegram: <a href="https://t.me/Ventilyator28">@Ventilyator28</a></p>
+    <p>VK: <a href="https://vk.com/id551824005">vk.com/id551824005</a></p>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <p>© 2025 Портфолио</p>
   </footer>
-</div><script>
-  function validEmail(e){return /.+@.+\..+/.test(e)}
-  function s(){
-    var n=document.getElementById('n').value.trim();
-    var e=document.getElementById('e').value.trim();
-    var m=document.getElementById('m').value.trim();
-    var msg=document.getElementById('msg');
-    if(!validEmail(e)){msg.style.color='red';msg.textContent='Неверный email';return false}
-    msg.style.color='green';msg.textContent='Готово, сообщение отправлено (демо)';
-    setTimeout(function(){document.getElementById('f').reset();msg.textContent='';},1200);
-    return false
-  }
-</script></body>
+</body>
 </html>
