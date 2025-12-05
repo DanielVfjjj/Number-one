@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Искусство и творчество — портфолио</title>
-  <meta name="description" content="Рисование, лепка из глины и концепт-арты. Минимализм, яркие цвета, японская эстетика. Учебный проект портфолио.">
-  <!-- Подключение CSS -->
+  <meta name="description" content="Рисование, лепка из глины и концепт-арты. Минимализм, яркие цвета, японская эстетика.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <!-- Навигация (ручная верстка: nav + anchors) -->
   <nav class="site-nav" aria-label="Главная навигация">
     <a class="logo" href="#home" aria-label="На главную">
       <img src="assets/brush.svg" alt="Иконка кисти" width="28" height="28">
@@ -23,7 +21,6 @@
     </ul>
   </nav>
 
-  <!-- Главная -->
   <section id="home" class="hero">
     <div class="hero-inner">
       <h1>Искусство и творчество</h1>
@@ -33,7 +30,6 @@
     </div>
   </section>
 
-  <!-- Обо мне (текст >300 символов) -->
   <section id="about" class="section">
     <h2>Обо мне</h2>
     <div class="content">
@@ -45,36 +41,29 @@
         и смелые цветовые пятна.
       </p>
       <p>
-        В портфолио собраны разные проекты: от маленьких миниатюр и «Минкультур» из глины, разукрашенных по номерам,
-        до более сложных фигурок и концептов. Я экспериментирую со смешанной техникой, совмещая традиционные материалы
-        и цифровые инструменты. Цель — развиваться в медиаиндустрии, где технологии усиливают искусство, а искусство
-        делает технологии человечнее. Если коротко: люблю создавать, и мне нравится, когда идея превращается в вещь.
+        В портфолио собраны разные проекты: от маленьких миниатюр и фигурок из глины до более сложных концептов.
+        Я экспериментирую со смешанной техникой, совмещая традиционные материалы и цифровые инструменты. Цель —
+        развиваться в медиаиндустрии, где технологии усиливают искусство, а искусство делает технологии человечнее.
       </p>
     </div>
   </section>
 
-  <!-- Портфолио (адаптивная сетка 2–3 колонки через CSS Grid) -->
   <section id="portfolio" class="section">
     <h2>Портфолио</h2>
-    <p class="section-lead">Фигурки из глины, рисунки и концепт‑арты. Ниже — несколько избранных работ.</p>
-
+    <p class="section-lead">Фигурки из глины, рисунки и концепт‑арты.</p>
     <div class="gallery">
-      <!-- Оригинальное фото (обязательное) -->
       <figure class="card">
         <img src="assets/original.jpg" alt="Авторская фигурка из глины — скин Minecraft">
         <figcaption>Фигурка из глины (Minecraft). Ручная лепка, акрил, лак.</figcaption>
       </figure>
-
       <figure class="card">
         <img src="assets/gallery1.jpg" alt="Рисунок — смешанная техника, яркие акценты">
         <figcaption>Рисование: смешанная техника, минимализм и акцентный цвет.</figcaption>
       </figure>
-
       <figure class="card">
         <img src="assets/gallery2.jpg" alt="Концепт‑арт персонажа в японской эстетике">
         <figcaption>Концепт‑арт: силуэт, ритм и японская эстетика.</figcaption>
       </figure>
-
       <figure class="card">
         <img src="assets/gallery3.jpg" alt="Лепка — миниатюра персонажа из аниме">
         <figcaption>Лепка: миниатюра персонажа из аниме, ручная покраска.</figcaption>
@@ -82,15 +71,11 @@
     </div>
   </section>
 
-  <!-- QR-код для быстрого перехода -->
   <section id="qr" class="section qr">
     <h2>QR‑код для перехода на сайт</h2>
-    <p class="section-lead">Отсканируйте QR‑код, чтобы открыть сайт на телефоне.</p>
-    <img class="qr-img" src="assets/qr_placeholder.png" alt="QR‑код сайта">
-    
+    <img class="qr-img" src="assets/qr.png" alt="QR‑код сайта">
   </section>
 
-  <!-- Контакты: форма + кликабельные телефон и email + соцсети -->
   <section id="contacts" class="section">
     <h2>Контакты</h2>
     <div class="contacts-grid">
@@ -98,15 +83,11 @@
         <form id="contactForm" novalidate>
           <label for="name">Имя</label>
           <input id="name" type="text" name="name" placeholder="Имя" required>
-
           <label for="email">Email</label>
           <input id="email" type="email" name="email" placeholder="Email" required>
-
           <label for="message">Сообщение</label>
           <textarea id="message" name="message" placeholder="Ваше сообщение..." rows="5" required></textarea>
-
           <button type="submit" class="btn">Отправить</button>
-          <p class="form-hint">Email проверяется на наличие @ (базовая валидация браузера).</p>
         </form>
       </div>
 
@@ -118,49 +99,19 @@
           <li><strong>VK:</strong> <a href="https://vk.com/id551824005" target="_blank">vk.com/id551824005</a></li>
         </ul>
 
-        <div class="social-icons" aria-label="Социальные сети">
-          <!-- Telegram (SVG иконка — адаптивная графика) -->
+        <div class="social-icons">
           <a href="https://t.me/Ventilyator28" target="_blank" aria-label="Telegram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0088cc" viewBox="0 0 24 24" role="img">
-              <path d="M22.99 3.2c-.29-.25-.76-.27-1.18-.11L2.2 10.3c-.62.23-.98.63-.98 1.09 0 .46.41.86 1.1 1.08l4.97 1.56 1.95 6.23c.16.51.55.83.98.83.39 0 .76-.27 1.03-.76l2.73-4.74 5.77 4.25c.46.33 1.02.41 1.46.19.44-.22.76-.72.86-1.35l2.08-13.1c.09-.58-.09-1.1-.47-1.42z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="32" height="32">
+              <circle cx="120" cy="120" r="120" fill="#0088cc"/>
+              <path d="M50 120l130-50c6-2 11 1 9 9l-22 104c-2 9-7 11-14 7l-39-29-19 18c-2 2-4 4-8 4l7-47 86-77c4-3-1-5-6-2l-106 67-46-15c-10-3-10-10 2-15z" fill="#fff"/>
             </svg>
           </a>
-          <!-- VK (SVG иконка — адаптивная графика) -->
           <a href="https://vk.com/id551824005" target="_blank" aria-label="VK">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4c75a3" viewBox="0 0 24 24" role="img">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.82 16.6h-1.21c-.51 0-.66-.41-1.55-1.3-.78-.78-1.11-.82-1.3-.82-.25 0-.33.07-.33.41v1.21c0 .25-.07.41-.66.41-1.31 0-2.77-1.12-3.91-2.77-1.12-1.55-1.98-3.38-1.98-3.91 0-.25.07-.41.41-.41h1.21c.33 0 .41.07.51.33.51 1.31 1.12 1.98 1.31 2.21.25.25.41.33.66.33.25 0 .33-.07.33-.41V8.9c0-.33-.07-.41-.33-.41H6.96c-.25 0-.41-.07-.41-.41V6.59c0-.25.07-.41.41-.41h3.91c.33 0 .41.07.41.41v5.95c0 .33.07.41.33.41.25 0 .41-.07.66-.33.41-.41 1.12-1.31 1.31-1.98.07-.25.25-.33.51-.33h1.21c.25 0 .41.07.41.41 0 .41-.41 1.31-1.31 2.21-.41.41-.41.41 0 .66.41.41 1.31 1.31 1.31 1.98 0 .25-.07.41-.41.41z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="32" height="32">
+              <circle cx="120" cy="120" r="120" fill="#4c75a3"/>
+              <path d="M65 85h25c2 0 3 1 4 3 5 13 11 20 13 22 2 2 4 3 6 3s3-1 3-4V85h30c2 0 3 1 3 3v25c0 2 1 3 3 3s4-1 6-3c5-5 12-13 14-20 1-2 2-3 4-3h15c2 0 3 1 3 3 0 5-4 13-13 22-4 4-4 4 0 7 5 5 13 13 13 22 0 2-1 3-3 3h-15c-6 0-8-4-18-13-9-9-12-9-14-9-3 0-4 1-4 4v15c0 3-1 4-7 4-13 0-28-11-39-28-11-16-20-34-20-39 0-2 1-3 3-3z" fill="#fff"/>
             </svg>
           </a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Футер -->
-  <footer class="site-footer">
-    <p>© 2025 Учебный проект — портфолио</p>
-    <p>Телефон и email кликабельны. Соцсети — минимум две (Telegram и VK).</p>
-  </footer>
-
-  <!-- Плавная прокрутка через JS (для совместимости со старыми браузерами) -->
-  <script>
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const id = link.getAttribute('href').substring(1);
-        const target = document.getElementById(id);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Простейшая подсветка ошибок формы (дополнительно к type="email")
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      const email = document.getElementById('email');
-      if (!email.value.includes('@')) {
-        e.preventDefault();
-        alert('Пожалуйста, укажите корректный email (должен содержать @).');
-      }
-    });
-  </script>
-</body>
-</html>
