@@ -1,11 +1,12 @@
-/* Базовая типографика и палитра */
+/* Базовая палитра */
 :root {
-  --bg: #ffffff;
-  --text: #222222;
-  --muted: #666666;
+  --bg: #fafafa;
+  --bg-soft: #f2f2f2;
+  --text: #222;
+  --muted: #666;
   --accent: #ff3b3b;
-  --accent-dark: #e03232;
-  --border: #eaeaea;
+  --accent-dark: #d92d2d;
+  --border: #e5e5e5;
   --shadow: rgba(0,0,0,0.12);
   --nav-h: 64px;
 }
@@ -20,9 +21,9 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", "SF Pro Text", Arial, sans-serif;
-  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
   background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -36,60 +37,63 @@ body {
   justify-content: space-between;
   height: var(--nav-h);
   padding: 0 16px;
-  background: var(--bg);
+  background: rgba(255,255,255,0.85);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: saturate(180%) blur(6px);
+  backdrop-filter: blur(10px);
 }
 
-.site-nav .logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text);
   text-decoration: none;
+  color: var(--text);
   font-weight: 600;
 }
 
-.site-nav .logo img {
-  display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+/* ✅ Анимация SVG кисточки */
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.site-nav .logo:hover img {
-  transform: scale(1.15) rotate(8deg);
-  filter: drop-shadow(0 0 8px var(--accent));
+.logo:hover .logo-icon {
+  transform: scale(1.15) rotate(10deg);
+  filter: drop-shadow(0 0 10px rgba(255, 59, 59, 0.5));
 }
 
+/* Меню */
 .menu {
   display: flex;
-  list-style: none;
   gap: 18px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .menu a {
-  color: var(--text);
-  text-decoration: none;
   padding: 8px 10px;
   border-radius: 6px;
-  transition: color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .menu a:hover {
-  color: #fff;
   background: var(--accent);
+  color: #fff;
 }
 
-/* Герой-блок */
+/* Hero */
 .hero {
   display: grid;
   place-items: center;
+  padding: 60px 16px;
   min-height: calc(60vh - var(--nav-h));
-  padding: 40px 16px;
   background:
-    radial-gradient(1000px 300px at 10% 0%, rgba(255, 59, 59, 0.06), transparent 50%),
-    radial-gradient(800px 300px at 90% 10%, rgba(255, 59, 59, 0.05), transparent 50%);
+    radial-gradient(900px 300px at 20% 0%, rgba(255, 59, 59, 0.08), transparent 60%),
+    radial-gradient(900px 300px at 80% 10%, rgba(255, 59, 59, 0.06), transparent 60%);
 }
 
 .hero-inner {
@@ -99,45 +103,45 @@ body {
 
 .hero h1 {
   font-size: 40px;
-  margin: 0 0 10px;
+  margin-bottom: 10px;
 }
 
 .tagline {
   color: var(--muted);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
+/* ✅ Анимация SVG кисточки в hero */
 .hero-icon {
+  width: 72px;
   margin: 10px auto 24px;
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .hero-icon:hover {
-  transform: scale(1.2) rotate(6deg);
-  filter: drop-shadow(0 0 12px var(--accent));
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0 0 12px rgba(255, 59, 59, 0.5));
 }
 
+/* Кнопка */
 .btn {
   display: inline-block;
+  padding: 12px 18px;
   background: var(--accent);
   color: #fff;
-  text-decoration: none;
-  padding: 12px 18px;
   border-radius: 10px;
+  text-decoration: none;
   box-shadow: 0 4px 12px var(--shadow);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn:hover {
   background: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px var(--shadow);
 }
 
-/* Общие секции */
+/* Секции */
 .section {
   padding: 56px 16px;
   scroll-margin-top: calc(var(--nav-h) + 20px);
@@ -145,25 +149,19 @@ body {
 
 .section h2 {
   font-size: 28px;
-  margin: 0 0 10px;
+  margin-bottom: 10px;
 }
 
 .section-lead {
   color: var(--muted);
-  margin: 0 0 20px;
-}
-
-.content {
-  max-width: 900px;
-  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 /* Галерея */
 .gallery {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  align-items: start;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -171,86 +169,4 @@ body {
 .card {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 14px var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px var(--shadow);
-}
-
-.card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
-}
-
-.card figcaption {
-  padding: 10px 12px;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-/* QR-блок */
-.qr {
-  text-align: center;
-}
-
-.qr-img {
-  display: block;
-  width: 180px;
-  height: auto;
-  margin: 16px auto;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 6px 14px var(--shadow);
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
-}
-
-/* Контакты */
-.contacts-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1.2fr 1fr;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.contact-form form {
-  display: grid;
-  gap: 12px;
-}
-
-.contact-form label {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  font-size: 16px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(255, 59, 59, 0.15);
-}
-
-.contact-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0
+  border
