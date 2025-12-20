@@ -52,6 +52,8 @@ body {
 .site-nav .logo svg,
 .hero-icon {
   display: block;
+  width: inherit;
+  height: inherit;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -145,7 +147,7 @@ body {
 /* Общие секции */
 .section {
   padding: 56px 16px;
-  scroll-margin-top: calc(var(--nav-h) + 20px); /* чтобы заголовки не прятались под навигацией */
+  scroll-margin-top: calc(var(--nav-h) + 20px);
 }
 
 .section h2 {
@@ -290,15 +292,18 @@ body {
   filter: drop-shadow(0 0 8px rgba(76,117,163,0.25));
 }
 
-/* Футер */
+/* ✅ Футер */
 .site-footer {
   border-top: 1px solid var(--border);
   text-align: center;
   padding: 24px 16px;
   color: var(--muted);
+  background: var(--bg);
+  font-size: 14px;
+  margin-top: 40px;
 }
 
-/* Адаптация для мобильных */
+/* ✅ Адаптация для мобильных */
 @media (max-width: 880px) {
   .contacts-grid {
     grid-template-columns: 1fr;
@@ -314,5 +319,36 @@ body {
   }
   .btn {
     border-radius: 8px;
+  }
+}
+
+/* ✅ Усиленная адаптация для телефонов */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 15px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .card figcaption {
+    font-size: 13px;
+  }
+
+  .site-nav {
+    padding: 0 10px;
+  }
+
+  .menu {
+    gap: 6px;
+  }
+
+  .logo span {
+    font-size: 14px;
   }
 }
