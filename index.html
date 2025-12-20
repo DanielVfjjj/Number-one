@@ -9,11 +9,11 @@
 </head>
 <body>
 
-  <!-- ✅ НАВИГАЦИЯ -->
+  
   <nav class="site-nav" aria-label="Главная навигация">
     <a class="logo" href="#home" aria-label="На главную">
 
-      <!-- ✅ УЛУЧШЕННЫЙ SVG -->
+      
       <svg class="logo-icon" width="28" height="28" preserveAspectRatio="xMidYMid meet"
            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 
@@ -60,13 +60,13 @@
     </ul>
   </nav>
 
-  <!-- ✅ HERO -->
+  
   <section id="home" class="hero">
     <div class="hero-inner">
       <h1>Искусство и творчество</h1>
       <p class="tagline">Рисование • Лепка из глины • Концепт‑арты</p>
 
-      <!-- ✅ УЛУЧШЕННЫЙ SVG (большой) -->
+      
       <svg class="hero-icon" width="72" height="72" preserveAspectRatio="xMidYMid meet"
            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 
@@ -106,7 +106,7 @@
     </div>
   </section>
 
-  <!-- ✅ ОБО МНЕ -->
+  
   <section id="about" class="section">
     <h2>Обо мне</h2>
     <div class="content">
@@ -125,7 +125,7 @@
     </div>
   </section>
 
-  <!-- ✅ ПОРТФОЛИО -->
+  
   <section id="portfolio" class="section">
     <h2>Портфолио</h2>
     <p class="section-lead">Некоторые работы: фигурки из глины и рисунки .</p>
@@ -170,13 +170,13 @@
     </div>
   </section>
 
-  <!-- ✅ QR -->
+  
   <section id="qr" class="section qr">
     <h2>QR‑код для перехода на сайт</h2>
     <img class="qr-img" src="assets/qr.png" alt="QR‑код сайта">
   </section>
 
-  <!-- ✅ КОНТАКТЫ -->
+  
   <section id="contacts" class="section">
     <h2>Контакты</h2>
     <div class="contacts-grid">
@@ -184,10 +184,13 @@
         <form id="contactForm" novalidate>
           <label for="name">Имя</label>
           <input id="name" type="text" name="name" placeholder="Имя" required>
+
           <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="Email" required>
+          <input id="email" type="email" name="email" placeholder="Email" required pattern=".*@.*">
+
           <label for="message">Сообщение</label>
           <textarea id="message" name="message" placeholder="Ваше сообщение..." rows="5" required></textarea>
+
           <button type="submit" class="btn">Отправить</button>
         </form>
       </div>
@@ -214,6 +217,22 @@
       </div>
     </div>
   </section>
+
+  
+  <footer class="site-footer">
+    <p>© Искусство и творчество, 2025. Все права защищены.</p>
+  </footer>
+
+  
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      const email = document.getElementById("email").value;
+      if (!email.includes("@")) {
+        e.preventDefault();
+        alert("Введите корректный email с символом @");
+      }
+    });
+  </script>
 
 </body>
 </html>
